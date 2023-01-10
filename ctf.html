@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div id="ctf-intro">
+    <div class="container">
+        <h2>CTF</h2>
+        <p>
+            I don't usually participate in CTF, but it's great for honing creativity
+        </p>
+    </div>
+</div>
+
+<section class="post-list">
+    <div class="container">
+        {% for ctf in site.data.ctfs %}
+            <div class="ctf-preview">
+                <div class="ctf-title">
+                    {{ ctf }}
+                </div>
+            {% for post in site.ctfs %}
+                {% if post.ctf == ctf %}
+                    <div>
+                        <span class="ctf-time pull-right">
+                            <time>{{ post.date | date: '%B %d, %Y '}}</time>
+                        </span>
+                        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                            {{ post.title }}
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
