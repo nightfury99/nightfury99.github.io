@@ -98,4 +98,4 @@ defaults:
 
 exclude: [vendor] # For travis ci
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
